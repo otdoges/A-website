@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- AOS Animate on Scroll -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #1f4037, #99f2c8);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00e676;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1.2s ease-in-out;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #333;
+      position: relative;
+      z-index: 1;
+    }
+
+    section[data-aos="fade-up"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #about {
+      background: #fff;
+    }
+
+    #experience {
+      background: #f8f9fa;
+    }
+
+    #projects {
+      background: #ececec;
+    }
+
+    #projects .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #contact {
+      background: linear-gradient(to right, #00b09b, #96c93d);
+      color: white;
+    }
+
+    footer {
+      background: #1f4037;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Scroll-based animations with staggering */
+    .project-grid div[data-aos] {
+      transition-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .project-grid div[data-aos="zoom-in"] {
+      opacity: 1;
+      transform: scale(1);
+      transition-delay: 0.4s;
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>My Portfolio</h1>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Hi! I'm a passionate web developer with a knack for creating visually appealing and user-friendly websites. I specialize in front-end development with a focus on responsive design and dynamic interactions.</p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" data-aos="fade-right">
+    <h2>Experience</h2>
+    <ul>
+      <li>Company A - Front-End Developer (2021 - Present)</li>
+      <li>Company B - Full-Stack Developer (2019 - 2021)</li>
+      <li>Company C - Web Designer (2017 - 2019)</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" data-aos="fade-left">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project" data-aos="zoom-in">
+        <h3>Project 1</h3>
+        <p>A sleek web application built using React.js with complex state management.</p>
+      </div>
+      <div class="project" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Project 2</h3>
+        <p>An e-commerce platform featuring a Node.js back-end and secure payment integration.</p>
+      </div>
+      <div class="project" data-aos="zoom-in" data-aos-delay="400">
+        <h3>Project 3</h3>
+        <p>A portfolio website template showcasing smooth animations and design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact Me</h2>
+    <p>Let's get in touch! Feel free to reach out via email or LinkedIn.</p>
+    <p>Email: example@example.com</p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+  </section>
+
+  <footer>
+    <p>© 2024 My Portfolio. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS library for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  </script>
+</body>
+</html>
